@@ -1,0 +1,516 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_1"
+    android:keepScreenOn="true"
+    android:orientation="vertical"
+    android:padding="3dp"
+    android:weightSum="10">
+
+    <LinearLayout
+        android:id="@+id/white_box_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/turnColorOther"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingRight="6dp"
+        android:visibility="gone"
+        android:weightSum="10">
+
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/white_profile"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:src="@drawable/user"
+            app:civ_border_color="#fff"
+            app:civ_border_width="2dp" />
+
+        <android.support.v4.widget.Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3" />
+
+        <TextView
+            android:id="@+id/white_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="6dp"
+            android:layout_weight="4.8"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:maxLines="1"
+            android:textColor="#fff"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/chat_white"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
+            android:padding="5dp"
+            android:tint="#fff"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/ic_chat_black_24dp" />
+
+        <ImageView
+            android:id="@+id/white_clock"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:tint="#fff"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/ic_access_time_black_24dp" />
+
+        <android.support.v4.widget.Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3" />
+
+        <TextView
+            android:id="@+id/white_timer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2"
+            android:textColor="#fff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+        <android.support.v4.widget.Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:animateLayoutChanges="true"
+        android:clipChildren="false"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:ignore="MergeRootFrame">
+
+        <LinearLayout
+            android:id="@+id/whiteCheckerArea"
+            style="@style/CheckerArea"
+            android:layout_above="@id/board"
+            android:clipChildren="false"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/whiteChecker1"
+                style="@style/CheckerImage"
+                android:contentDescription="1"
+                android:src="@drawable/white_checker" />
+
+            <ImageView
+                android:id="@+id/whiteChecker2"
+                style="@style/CheckerImage"
+                android:contentDescription="2"
+                android:src="@drawable/white_checker" />
+
+            <ImageView
+                android:id="@+id/whiteChecker3"
+                style="@style/CheckerImage"
+                android:contentDescription="3"
+                android:src="@drawable/white_checker" />
+
+            <ImageView
+                android:id="@+id/whiteChecker4"
+                style="@style/CheckerImage"
+                android:contentDescription="4"
+                android:src="@drawable/white_checker" />
+
+            <ImageView
+                android:id="@+id/whiteChecker5"
+                style="@style/CheckerImage"
+                android:contentDescription="5"
+                android:src="@drawable/white_checker" />
+
+            <ImageView
+                android:id="@+id/whiteChecker6"
+                style="@style/CheckerImage"
+                android:contentDescription="6"
+                android:src="@drawable/white_checker" />
+
+            <ImageView
+                android:id="@+id/whiteChecker7"
+                style="@style/CheckerImage"
+                android:contentDescription="7"
+                android:src="@drawable/white_checker" />
+
+            <ImageView
+                android:id="@+id/whiteChecker8"
+                style="@style/CheckerImage"
+                android:contentDescription="8"
+                android:src="@drawable/white_checker" />
+
+            <ImageView
+                android:id="@+id/whiteChecker9"
+                style="@style/CheckerImage"
+                android:contentDescription="9"
+                android:src="@drawable/white_checker" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/board"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_centerInParent="true"
+            android:clipChildren="false"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/board_background"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ninemenmorrisboard" />
+
+            <!-- Hitboxes -->
+            <!-- Outer circle -->
+
+            <FrameLayout
+                android:id="@+id/area2"
+                style="@style/Hitbox"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="23dp"
+                android:contentDescription="2" />
+
+            <FrameLayout
+                android:id="@+id/area10"
+                style="@style/Hitbox"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="23dp"
+                android:contentDescription="10" />
+
+            <FrameLayout
+                android:id="@+id/area15"
+                style="@style/Hitbox"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="23dp"
+                android:contentDescription="15" />
+
+            <FrameLayout
+                android:id="@+id/area23"
+                style="@style/Hitbox"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="23dp"
+                android:contentDescription="23" />
+
+            <FrameLayout
+                android:id="@+id/area1"
+                style="@style/Hitbox"
+                android:layout_alignLeft="@id/area10"
+                android:layout_alignTop="@id/area2"
+                android:contentDescription="1" />
+
+            <FrameLayout
+                android:id="@+id/area3"
+                style="@style/Hitbox"
+                android:layout_alignRight="@id/area15"
+                android:layout_alignTop="@id/area2"
+                android:contentDescription="3" />
+
+            <FrameLayout
+                android:id="@+id/area22"
+                style="@style/Hitbox"
+                android:layout_alignBottom="@id/area23"
+                android:layout_alignLeft="@id/area10"
+                android:contentDescription="22" />
+
+            <FrameLayout
+                android:id="@+id/area24"
+                style="@style/Hitbox"
+                android:layout_alignBottom="@id/area23"
+                android:layout_alignRight="@id/area15"
+                android:contentDescription="24" />
+
+            <!-- middle circle -->
+
+            <FrameLayout
+                android:id="@+id/area5"
+                style="@style/Hitbox"
+                android:layout_below="@id/area2"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="5" />
+
+            <FrameLayout
+                android:id="@+id/area11"
+                style="@style/Hitbox"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/area10"
+                android:contentDescription="11" />
+
+            <FrameLayout
+                android:id="@+id/area14"
+                style="@style/Hitbox"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/area15"
+                android:contentDescription="14" />
+
+            <FrameLayout
+                android:id="@+id/area20"
+                style="@style/Hitbox"
+                android:layout_above="@id/area23"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="20" />
+
+            <FrameLayout
+                android:id="@+id/area4"
+                style="@style/Hitbox"
+                android:layout_alignLeft="@id/area11"
+                android:layout_alignTop="@id/area5"
+                android:contentDescription="4" />
+
+            <FrameLayout
+                android:id="@+id/area6"
+                style="@style/Hitbox"
+                android:layout_alignRight="@id/area14"
+                android:layout_alignTop="@id/area5"
+                android:contentDescription="6" />
+
+            <FrameLayout
+                android:id="@+id/area19"
+                style="@style/Hitbox"
+                android:layout_alignBottom="@id/area20"
+                android:layout_alignLeft="@id/area11"
+                android:contentDescription="19" />
+
+            <FrameLayout
+                android:id="@+id/area21"
+                style="@style/Hitbox"
+                android:layout_alignBottom="@id/area20"
+                android:layout_alignRight="@id/area14"
+                android:contentDescription="21" />
+
+            <!-- middle circle -->
+
+            <FrameLayout
+                android:id="@+id/area8"
+                style="@style/Hitbox"
+                android:layout_below="@id/area5"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="8" />
+
+            <FrameLayout
+                android:id="@+id/area12"
+                style="@style/Hitbox"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/area11"
+                android:contentDescription="12" />
+
+            <FrameLayout
+                android:id="@+id/area13"
+                style="@style/Hitbox"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/area14"
+                android:contentDescription="13" />
+
+            <FrameLayout
+                android:id="@+id/area17"
+                style="@style/Hitbox"
+                android:layout_above="@id/area20"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="17" />
+
+            <FrameLayout
+                android:id="@+id/area7"
+                style="@style/Hitbox"
+                android:layout_alignLeft="@id/area12"
+                android:layout_alignTop="@id/area8"
+                android:contentDescription="7" />
+
+            <FrameLayout
+                android:id="@+id/area9"
+                style="@style/Hitbox"
+                android:layout_alignRight="@id/area13"
+                android:layout_alignTop="@id/area8"
+                android:contentDescription="9" />
+
+            <FrameLayout
+                android:id="@+id/area16"
+                style="@style/Hitbox"
+                android:layout_alignBottom="@id/area17"
+                android:layout_alignLeft="@id/area12"
+                android:contentDescription="16" />
+
+            <FrameLayout
+                android:id="@+id/area18"
+                style="@style/Hitbox"
+                android:layout_alignBottom="@id/area17"
+                android:layout_alignRight="@id/area13"
+                android:contentDescription="18" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/blackCheckerArea"
+            style="@style/CheckerArea"
+            android:layout_below="@id/board"
+            android:clipChildren="false"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/blackChecker1"
+                style="@style/CheckerImage"
+                android:contentDescription="1"
+                android:src="@drawable/black_checker" />
+
+            <ImageView
+                android:id="@+id/blackChecker2"
+                style="@style/CheckerImage"
+                android:contentDescription="2"
+                android:src="@drawable/black_checker" />
+
+            <ImageView
+                android:id="@+id/blackChecker3"
+                style="@style/CheckerImage"
+                android:contentDescription="3"
+                android:src="@drawable/black_checker" />
+
+            <ImageView
+                android:id="@+id/blackChecker4"
+                style="@style/CheckerImage"
+                android:contentDescription="4"
+                android:src="@drawable/black_checker" />
+
+            <ImageView
+                android:id="@+id/blackChecker5"
+                style="@style/CheckerImage"
+                android:contentDescription="5"
+                android:src="@drawable/black_checker" />
+
+            <ImageView
+                android:id="@+id/blackChecker6"
+                style="@style/CheckerImage"
+                android:contentDescription="6"
+                android:src="@drawable/black_checker" />
+
+            <ImageView
+                android:id="@+id/blackChecker7"
+                style="@style/CheckerImage"
+                android:contentDescription="7"
+                android:src="@drawable/black_checker" />
+
+            <ImageView
+                android:id="@+id/blackChecker8"
+                style="@style/CheckerImage"
+                android:contentDescription="8"
+                android:src="@drawable/black_checker" />
+
+            <ImageView
+                android:id="@+id/blackChecker9"
+                style="@style/CheckerImage"
+                android:contentDescription="9"
+                android:src="@drawable/black_checker" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/black_box_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/turnColorOther"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingRight="6dp"
+        android:visibility="gone"
+        android:weightSum="10">
+
+        <android.support.v4.widget.Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2" />
+
+        <ImageView
+            android:id="@+id/black_clock"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:tint="#fff"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/ic_access_time_black_24dp" />
+
+        <android.support.v4.widget.Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3" />
+
+        <TextView
+            android:id="@+id/black_timer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2"
+            android:textColor="#fff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/chat_black"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
+            android:padding="5dp"
+            android:tint="#fff"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/ic_chat_black_24dp" />
+
+        <android.support.v4.widget.Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3" />
+
+        <TextView
+            android:id="@+id/black_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="6dp"
+            android:layout_weight="4.8"
+            android:ellipsize="end"
+            android:gravity="right"
+            android:maxLines="1"
+            android:textColor="#fff"
+            android:textStyle="bold" />
+
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/black_profile"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:src="@drawable/user"
+            app:civ_border_color="#fff"
+            app:civ_border_width="2dp" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/game_play_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+
+</LinearLayout>

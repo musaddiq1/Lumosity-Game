@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#000000</color>
+
+    <color name="turnColor">#2d8000</color>
+    <color name="turnColorOther">#48212121</color>
+    <color name="white">#f9f7f7</color>
+
+    <color name="app_bg_1">#481818</color>
+
+    <color name="active_tab_color">#ffffff</color>
+    <color name="inactive_tab_color">#89b4b4b4</color>
+    <color name="blue">#2f333f</color>
+    <color name="dark_blue_light">#bc606884</color>
+
+    <color name="colorTextBlack">#333333</color>
+    <color name="colorTextHint">#e1e1e1</color>
+    <color name="colorTextInfo">#9b9b9b</color>
+    <color name="colorPurpleLight">#4B5980</color>
+</resources>

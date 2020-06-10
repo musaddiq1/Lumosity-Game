@@ -1,0 +1,50 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="CheckerArea">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_margin">10dp</item>
+    </style>
+
+    <style name="CheckerImageArea">
+        <item name="android:layout_width">29dp</item>
+        <item name="android:layout_height">29dp</item>
+        <item name="android:layout_margin">1dp</item>
+    </style>
+
+    <style name="CheckerImage" parent="CheckerImageArea">
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="Hitbox">
+        <item name="android:layout_width">29dp</item>
+        <item name="android:layout_height">29dp</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="BottomNavigationTheme" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/active_tab_color</item>
+        <item name="android:textColorSecondary">@color/inactive_tab_color</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>

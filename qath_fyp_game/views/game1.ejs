@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Game Play</title>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+  </head>
+  <body style="margin-top:200px">
+    <center>
+        <button onClick="setGame()">Set Game Parameter</button>
+        <button onClick="requestGame()">requestGame</button>
+        <br><br>
+        Index Value : <input type="number" id="index"/><br><br>
+        Type : <input type="text" id="type"/><br><br>
+        emitTo : <input type="text" id="emitTo"/><br><br>
+        myID : <input type="text" id="myID"/><br><br>
+        <button onClick="sendMoveToPlayer()">sendMoveToPlayer</button>
+        <br><br>
+        <button onClick="sendMessage()">sendMessage</button>
+        <br><br>
+        <button onClick="sendFriendRequest()">sendFriendRequest</button>
+
+    </center>
+
+
+    <script>
+      var socket = io.connect('http://192.168.1.8:3005');
+      function setGame(){
+         var user = {
+           "API_KEY" : "ny$@w4^AfI:ANeirYp*/Jxpw5l#",
+           "token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiSHVzc2FpbiBTaGFoIiwiZW1haWwiOiJodXNzYWluQGdtYWlsLmNvbSIsInByb3ZpZGVyX2lkIjoiLTk5IiwicHJvdmlkZXIiOiJVU0VSX1BST1ZJREVSX0FQUF9BVVRIIiwicHJvZmlsZSI6IntcInByb3ZpZGVyXCI6XCJRYXRoXCIsXCJpbWFnZVwiOlwibm9uZVwifSIsInVzZXJJRCI6MTAsInN0YXR1cyI6InVuQXBwcm92ZWQifSwiaWF0IjoxNTU0NTU3OTUyLCJleHAiOjM5NzM3NTc5NTJ9.R13RmMklLejTpN6VmRZvlWudN6PHNcyAPAB3uvodg_s"
+         };
+         socket.emit('join',user,(err,message)=>{
+           console.log(err,message);
+         });
+
+         socket.on("ping", (data)=>{
+           console.log('pong : ',data);
+           socket.emit('pong' , user);
+         });
+      }
+
+      function sendMoveToPlayer(){
+
+        var ob = {
+          "index" : document.getElementById("index").value,
+          "type" : document.getElementById("type").value,
+          "emitTo" : document.getElementById("emitTo").value,
+          "myID" : document.getElementById("myID").value
+        };
+
+        socket.emit('sendMoveToPlayer',ob,(err,message)=>{
+          console.log(err,message);
+        });
+
+      }
+
+      function requestGame(){
+        socket.emit('requestGame',(err,message)=>{
+          console.log(err,message);
+        });
+      }
+
+      function sendMessage(){
+        socket.emit('sendChatMessage',{
+          "messageText" : "from web test",
+          "receiver" : 12,
+          "otherPlayerSocketID" : document.getElementById("emitTo").value,
+          "sender" : 6
+        },(err,message)=>{
+          console.log(err,message);
+        });
+      }
+
+      function sendFriendRequest(){
+        socket.emit('sendFriendRequest',{
+          "sender" : 6,
+          "receiver" : 12,
+          "receiverSocketId" : document.getElementById("emitTo").value,
+          "text" : "some text"
+        },(err,message)=>{
+          console.log(err,message);
+        });
+      }
+
+
+    </script>
+
+
+  </body>
+</html>

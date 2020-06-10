@@ -1,0 +1,7 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/CheckerImageArea"
+    android:layout_width="29dp"
+    android:layout_height="29dp"
+    android:layout_margin="1dp">
+
+</FrameLayout>

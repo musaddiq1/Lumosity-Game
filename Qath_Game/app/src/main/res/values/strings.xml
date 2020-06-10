@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Qath</string>
+    <string name="turn_color">Whites turn</string>
+    <string name="rules">The basic aim of Qath is to make mills - vertical or horizontal lines of three in a row. \n\n
+        Every time this is achieved, an opponents piece is removed, the overall objective being to reduce the number of opponents pieces to less than three or to render the opponent unable to play. \n\n
+        To begin with the board is empty.</string>
+
+    <string name="facebook_app_id">396823657763555</string>
+    <string name="fb_login_protocol_scheme">fb396823657763555</string>
+
+    <string name="server_side_api_key">ny$@w4^AfI:ANeirYp*/Jxpw5l#</string>
+
+    <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
+</resources>

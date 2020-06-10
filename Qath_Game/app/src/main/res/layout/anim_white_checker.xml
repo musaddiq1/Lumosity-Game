@@ -1,0 +1,4 @@
+<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tmpWhiteChecker"
+    style="@style/CheckerImage"
+    android:src="@drawable/white_checker" />
